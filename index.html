@@ -100,7 +100,7 @@ p{line-height:1.65}
 .collage-copy{width:min(640px,calc(100% - 250px));padding:26px 34px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:28px;box-shadow:0 20px 55px rgba(93,69,8,.13)}
 .collage-copy h2{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05}
 .collage-copy .sub{margin-bottom:0}
-.s6 .next{max-width:calc(100% - 28px);text-align:center}
+.s2 .next{max-width:calc(100% - 28px);text-align:center}
 .collage-photo{position:absolute;z-index:2;display:block;height:auto;object-fit:contain;image-rendering:auto;pointer-events:none;user-select:none}
 .collage-rizos{width:clamp(120px,13vw,190px);left:5%;top:9%;transform:rotate(-8deg)}
 .collage-selfie{width:clamp(115px,12vw,180px);left:2%;top:40%;transform:rotate(6deg)}
@@ -127,9 +127,9 @@ p{line-height:1.65}
 .flower{position:relative;z-index:1;display:block;width:var(--flower-size);height:var(--flower-size);padding:0;border:0;background:none;cursor:pointer;touch-action:manipulation}
 .flower:focus-visible{outline:3px solid #ba8f00;outline-offset:3px;border-radius:50%}
 .flower-head{position:relative;display:block;width:100%;height:100%;opacity:0;transform:scale(.25) rotate(-10deg)}
-#p5:checked ~ .app .s5 .flower-head{animation:flowerBloom .75s cubic-bezier(.18,.8,.25,1.2) both;animation-delay:var(--bloom-delay)}
-#p5:checked ~ .app .s5 .flower.visited .flower-head{animation:none;opacity:1;transform:none}
-#p5:checked ~ .app .s5 .flower.selected .flower-head{animation:flowerTouch .7s ease-in-out both;animation-delay:0s}
+#p6:checked ~ .app .s6 .flower-head{animation:flowerBloom .75s cubic-bezier(.18,.8,.25,1.2) both;animation-delay:var(--bloom-delay)}
+#p6:checked ~ .app .s6 .flower.visited .flower-head{animation:none;opacity:1;transform:none}
+#p6:checked ~ .app .s6 .flower.selected .flower-head{animation:flowerTouch .7s ease-in-out both;animation-delay:0s}
 @keyframes flowerBloom{to{opacity:1;transform:scale(1) rotate(0)}}
 @keyframes flowerTouch{0%,100%{opacity:1;transform:scale(1) rotate(0)}38%{transform:scale(1.12) rotate(-4deg)}68%{transform:scale(1.05) rotate(3deg)}}
 .petal{position:absolute;left:38%;top:1%;width:24%;height:50%;border-radius:65% 65% 42% 42%;transform-origin:50% 96%;background:linear-gradient(155deg,#fffbd3 0%,#ffeb71 28%,#f8cc31 78%,#e8a91c 100%);box-shadow:inset 2px 0 5px rgba(255,255,255,.5),inset -2px -3px 5px rgba(156,100,0,.12)}
@@ -139,10 +139,10 @@ p{line-height:1.65}
 .flower.selected .flower-center{box-shadow:inset 0 2px 5px rgba(33,21,5,.38),0 0 0 4px rgba(255,232,117,.9)}
 .flower-note{position:absolute;left:50%;top:calc(50% + 18px);z-index:3;display:grid;place-items:center;width:min(210px,62vw);min-height:64px;padding:12px 18px;border:2px solid #e9c763;border-radius:49% 51% 47% 53% / 43% 45% 55% 57%;background:rgba(255,252,225,.97);box-shadow:0 9px 22px rgba(108,74,12,.18);color:#5d4517;font:700 .91rem/1.28 Georgia,serif;text-align:center;opacity:0;visibility:hidden;transform:translate(-50%,-50%) scale(.25);transition:opacity .32s ease,transform .48s cubic-bezier(.2,.8,.25,1.1);pointer-events:none;overflow-wrap:break-word}
 .flower.selected .flower-note{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1)}
-.s5 .sub{max-width:620px;margin:9px auto 0}
-.s5 .bouquet-hint{margin:8px auto 0;color:var(--muted);font-size:.95rem;line-height:1.35}
-.s5 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media(prefers-reduced-motion:reduce){#p5:checked ~ .app .s5 .flower-head,#p5:checked ~ .app .s5 .flower.selected .flower-head{animation:none;opacity:1;transform:none}.flower-note{transition:none}}
+.s6 .sub{max-width:620px;margin:9px auto 0}
+.s6 .bouquet-hint{margin:8px auto 0;color:var(--muted);font-size:.95rem;line-height:1.35}
+.s6 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(prefers-reduced-motion:reduce){#p6:checked ~ .app .s6 .flower-head,#p6:checked ~ .app .s6 .flower.selected .flower-head{animation:none;opacity:1;transform:none}.flower-note{transition:none}}
 
 .letter{max-width:760px;margin:auto;padding:26px;text-align:left}
 .letter p{font-family:Georgia,serif;font-size:clamp(1rem,2.4vw,1.16rem);margin:10px 0}
@@ -174,18 +174,18 @@ p{line-height:1.65}
   .collage-formal{width:clamp(95px,30vw,125px);right:3%;bottom:18%}
   .letter{padding:20px 18px}.letter p{line-height:1.48;margin:8px 0}
   .photo{height:49vh}
-  .s5 .bouquet{--flower-size:clamp(60px,18vw,76px);width:min(380px,94vw);height:255px;margin:6px auto 0}
-  .s5 .flower-note{min-height:58px;padding:10px 14px;font-size:.82rem}
-  .s5 .sub{font-size:.92rem;line-height:1.42}
+  .s6 .bouquet{--flower-size:clamp(60px,18vw,76px);width:min(380px,94vw);height:255px;margin:6px auto 0}
+  .s6 .flower-note{min-height:58px;padding:10px 14px;font-size:.82rem}
+  .s6 .sub{font-size:.92rem;line-height:1.42}
 }
 @media(max-height:650px){
-  .s5 h2{font-size:clamp(1.7rem,6vw,2.2rem)}
-  .s5 .bouquet{--flower-size:clamp(54px,6vw,72px);height:240px;margin:0 auto}
-  .s5 .sub{margin:5px auto 0;font-size:.84rem;line-height:1.3}
+  .s6 h2{font-size:clamp(1.7rem,6vw,2.2rem)}
+  .s6 .bouquet{--flower-size:clamp(54px,6vw,72px);height:240px;margin:0 auto}
+  .s6 .sub{margin:5px auto 0;font-size:.84rem;line-height:1.3}
 }
 @media(max-height:650px) and (max-width:650px){
-  .s5 .bouquet{--flower-size:54px;height:220px}
-  .s5 .flower-note{min-height:52px;padding:8px 12px;font-size:.76rem}
+  .s6 .bouquet{--flower-size:54px;height:220px}
+  .s6 .flower-note{min-height:52px;padding:8px 12px;font-size:.76rem}
 }
 </style>
 </head>
@@ -217,6 +217,19 @@ p{line-height:1.65}
   </section>
 
   <section class="scene s2">
+    <img class="collage-photo collage-rizos" src="assets/collage/retrato-rizos.png" alt="">
+    <img class="collage-photo collage-selfie" src="assets/collage/selfie-primer-plano.png" alt="">
+    <img class="collage-photo collage-concierto" src="assets/collage/foto-concierto.jpeg" alt="">
+    <img class="collage-photo collage-telefonos" src="assets/collage/telefonos-concierto.png" alt="">
+    <img class="collage-photo collage-formal" src="assets/collage/retrato-formal.png" alt="">
+    <div class="wrap collage-copy">
+      <h2 class="reveal delay2">Así me siento por no haberte podido dar tus flores hoy 😞</h2>
+      <p class="sub reveal delay3">Pero no quería que mi pequeñita princesa se quedara sin sus flores amarillas, así que te preparé esta sorpresa con muchísimo cariño.</p>
+    </div>
+    <label class="next" for="p3">Última sorpresa →</label>
+  </section>
+
+  <section class="scene s3">
     <img class="sticker medium left-bottom" src="assets/stickers/shiba-rosas-para-ti.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/gato-negro-girasol.png" alt="">
     <div class="wrap">
       <div class="eyebrow reveal">Nuestro pequeño álbum</div>
@@ -226,10 +239,10 @@ p{line-height:1.65}
         <div class="caption">Una foto guarda un momento. Yo quiero seguir haciendo muchos contigo.</div>
       </div>
     </div>
-    <label class="next" for="p3">Seguir →</label>
+    <label class="next" for="p4">Seguir →</label>
   </section>
 
-  <section class="scene s3">
+  <section class="scene s4">
     <img class="sticker big left-bottom" src="assets/stickers/gatito-vaquero-rosas.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/mapache-girasoles.png" alt="">
     <div class="wrap">
       <div class="eyebrow reveal">Y seguimos contando</div>
@@ -237,10 +250,10 @@ p{line-height:1.65}
       <h2 class="reveal delay3">años de nosotros 💛</h2>
       <p class="sub reveal delay4">Y todavía quiero seguir coleccionando días, planes, risas y recuerdos contigo.</p>
     </div>
-    <label class="next" for="p4">Tengo más para ti →</label>
+    <label class="next" for="p5">Tengo más para ti →</label>
   </section>
 
-  <section class="scene s4">
+  <section class="scene s5">
     <img class="sticker medium left-bottom" src="assets/stickers/hamster-flores-amarillas.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/gato-ilustrado-flores.png" alt="">
     <div class="wrap">
       <div class="letter card reveal">
@@ -252,10 +265,10 @@ p{line-height:1.65}
         <div class="signature">Con amor, Eduardo 💛</div>
       </div>
     </div>
-    <label class="next" for="p5">Ver nuestro recuerdo →</label>
+    <label class="next" for="p6">Ver nuestro recuerdo →</label>
   </section>
 
-  <section class="scene s5">
+  <section class="scene s6">
     <img class="sticker big left-bottom" src="assets/stickers/girasol-primavera.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/gatito-ramo-rosas.png" alt="">
     <div class="wrap">
       <div class="eyebrow reveal">Primero</div>
@@ -272,20 +285,7 @@ p{line-height:1.65}
       <span class="sr-only" id="flowerAnnouncement" aria-live="polite"></span>
       <p class="sub reveal delay4">Puede que no las puedas tener en un florero, pero las puedes conservar aquí para siempre. Te amo, mi pequeñita. &lt;3</p>
     </div>
-    <label class="next" for="p6">Seguir →</label>
-  </section>
-
-  <section class="scene s6">
-    <img class="collage-photo collage-rizos" src="assets/collage/retrato-rizos.png" alt="">
-    <img class="collage-photo collage-selfie" src="assets/collage/selfie-primer-plano.png" alt="">
-    <img class="collage-photo collage-concierto" src="assets/collage/foto-concierto.jpeg" alt="">
-    <img class="collage-photo collage-telefonos" src="assets/collage/telefonos-concierto.png" alt="">
-    <img class="collage-photo collage-formal" src="assets/collage/retrato-formal.png" alt="">
-    <div class="wrap collage-copy">
-      <h2 class="reveal delay2">Así me siento por no haberte podido dar tus flores hoy 😞</h2>
-      <p class="sub reveal delay3">Pero no quería que mi pequeñita princesa se quedara sin sus flores amarillas, así que te preparé esta sorpresa con muchísimo cariño.</p>
-    </div>
-    <label class="next" for="p7">Última sorpresa →</label>
+    <label class="next" for="p7">Seguir →</label>
   </section>
 
   <section class="scene s7">

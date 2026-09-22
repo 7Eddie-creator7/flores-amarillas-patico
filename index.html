@@ -191,6 +191,9 @@ p{line-height:1.65}
   .sticker.big{width:min(21vw,10svh,82px)}
   .left-bottom{left:max(12px,env(safe-area-inset-left));bottom:calc(max(18px,env(safe-area-inset-bottom)) + 64px)}
   .right-bottom{right:max(12px,env(safe-area-inset-right));bottom:calc(max(18px,env(safe-area-inset-bottom)) + 64px)}
+  .s1 .sticker.big{width:clamp(68px,21vw,92px)}
+  .s1 .sticker.medium{width:clamp(68px,20vw,88px)}
+  .s1 .sticker.left-bottom,.s1 .sticker.right-bottom{bottom:calc(max(18px,env(safe-area-inset-bottom)) + 60px)}
   .right-top{right:0;top:12%}
   .collage-copy{width:min(94%,510px);padding:20px 22px}
   .collage-copy h2{font-size:clamp(1.8rem,7.2vw,2.4rem)}
@@ -201,8 +204,10 @@ p{line-height:1.65}
   .collage-concierto{width:min(16vw,68px);left:37%;bottom:max(94px,18svh);border-width:4px;border-radius:9px}
   .collage-formal{width:min(27vw,110px);right:18px;bottom:max(94px,18svh)}
   .letter{padding:20px 18px}.letter p{line-height:1.48;margin:8px 0}
-  .s3 .sticker.medium{top:max(64px,calc(env(safe-area-inset-top) + 58px));bottom:auto;width:min(12vw,6svh,44px)}
-  .s5 .sticker.medium{bottom:max(24px,calc(env(safe-area-inset-bottom) + 12px));width:min(11vw,5.4svh,40px)}
+  .s3 .sticker.medium{top:max(60px,calc(env(safe-area-inset-top) + 56px));bottom:auto;width:clamp(58px,16vw,68px)}
+  .s3 .sticker.right-bottom{z-index:4}
+  .s4 .sticker.big{width:min(20vw,11svh,88px)}
+  .s5 .sticker.medium{bottom:max(24px,calc(env(safe-area-inset-bottom) + 12px));width:min(18vw,76px,max(28px,calc(50vw - 125px)))}
   .s3 .photo{padding:10px 9px 8px;gap:3px}
   .s3 .memory-top{gap:7px}
   .s3 .initials{font-size:.78rem}
@@ -218,11 +223,11 @@ p{line-height:1.65}
   .s6 .bouquet{--flower-size:clamp(60px,18vw,76px);width:min(380px,94vw);height:255px;margin:6px auto 0}
   .s6 .flower-note{min-height:58px;padding:10px 14px;font-size:.82rem}
   .s6 .sub{font-size:.92rem;line-height:1.42}
-  .s6 .sticker.left-bottom,.s6 .sticker.right-bottom{bottom:30%}
-  .s6 .sticker.left-bottom{width:min(12vw,7svh,46px)}
-  .s6 .sticker.right-bottom{width:min(16vw,8svh,58px)}
-  .s6 .bouquet-side-left{left:max(12px,env(safe-area-inset-left));bottom:44%;width:min(15vw,20svh,68px)}
-  .s6 .bouquet-side-right{right:max(12px,env(safe-area-inset-right));bottom:44%;width:min(18vw,28svh,80px)}
+  .s6 .sticker.left-bottom,.s6 .sticker.right-bottom{bottom:29%}
+  .s6 .sticker.left-bottom{width:min(15vw,9svh,60px)}
+  .s6 .sticker.right-bottom{width:min(18vw,10svh,66px)}
+  .s6 .bouquet-side-left{left:max(12px,env(safe-area-inset-left));bottom:46%;width:min(17vw,22svh,70px)}
+  .s6 .bouquet-side-right{right:max(12px,env(safe-area-inset-right));bottom:46%;width:min(19vw,30svh,78px)}
   .s7 .sticker.left-bottom,.s7 .sticker.right-bottom{bottom:max(24px,calc(env(safe-area-inset-bottom) + 12px))}
   .s7 .sticker.big{width:min(16vw,8svh,52px)}
   .s7 .sticker.medium{width:min(15vw,8svh,52px)}
@@ -240,6 +245,10 @@ p{line-height:1.65}
 @media(max-height:650px) and (max-width:650px){
   .s6 .bouquet{--flower-size:54px;height:220px}
   .s6 .flower-note{min-height:52px;padding:8px 12px;font-size:.76rem}
+  .s3 .sticker.medium{width:min(14vw,52px)}
+}
+@media(max-height:550px) and (max-width:650px){
+  .s1 .sticker.big,.s1 .sticker.medium{width:min(18vw,62px)}
 }
 </style>
 </head>

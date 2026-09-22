@@ -65,8 +65,7 @@ p{line-height:1.65}
 #p4:checked ~ .app .s4,
 #p5:checked ~ .app .s5,
 #p6:checked ~ .app .s6,
-#p7:checked ~ .app .s7,
-#p8:checked ~ .app .s8{
+#p7:checked ~ .app .s7{
   opacity:1;visibility:visible;pointer-events:auto;z-index:5;transform:none;
 }
 #p1:checked ~ .app .d1,
@@ -75,8 +74,7 @@ p{line-height:1.65}
 #p4:checked ~ .app .d4,
 #p5:checked ~ .app .d5,
 #p6:checked ~ .app .d6,
-#p7:checked ~ .app .d7,
-#p8:checked ~ .app .d8{width:24px;background:var(--accent)}
+#p7:checked ~ .app .d7{width:24px;background:var(--accent)}
 
 .reveal{opacity:0;transform:translateY(18px) scale(.98)}
 #p1:checked ~ .app .s1 .reveal,
@@ -85,8 +83,7 @@ p{line-height:1.65}
 #p4:checked ~ .app .s4 .reveal,
 #p5:checked ~ .app .s5 .reveal,
 #p6:checked ~ .app .s6 .reveal,
-#p7:checked ~ .app .s7 .reveal,
-#p8:checked ~ .app .s8 .reveal{animation:reveal .7s cubic-bezier(.2,.8,.2,1) forwards}
+#p7:checked ~ .app .s7 .reveal{animation:reveal .7s cubic-bezier(.2,.8,.2,1) forwards}
 .delay2{animation-delay:.16s!important}.delay3{animation-delay:.32s!important}.delay4{animation-delay:.48s!important}
 @keyframes reveal{to{opacity:1;transform:none}}
 
@@ -97,7 +94,7 @@ p{line-height:1.65}
 }
 .sticker.medium{width:clamp(125px,15vw,190px)}
 .sticker.big{width:clamp(145px,18vw,230px)}
-.left-bottom{left:2%;bottom:11%}.right-bottom{right:2%;bottom:11%}
+.left-bottom{left:2%;bottom:11%}.right-bottom{right:2%;bottom:11%}.right-top{right:3%;top:18%}
 
 .collage-copy{width:min(640px,calc(100% - 250px));padding:26px 34px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:28px;box-shadow:0 20px 55px rgba(93,69,8,.13)}
 .collage-copy h2{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05}
@@ -156,9 +153,6 @@ p{line-height:1.65}
 
 
 .big3{font:700 clamp(6rem,25vw,12rem)/.76 Georgia,serif;color:#bd9100;margin:8px 0}
-.secret-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:16px auto 0;max-width:620px}
-.secret{width:56px;height:56px;border:0;border-radius:50%;background:white;font-size:1.65rem;box-shadow:0 8px 20px rgba(89,63,0,.12);cursor:pointer}
-.secretText{height:48px;margin:12px auto 0;font:1.2rem/1.35 Georgia,serif;color:#6d5410}
 .finalFlowers{font-size:clamp(2.1rem,8vw,4rem);letter-spacing:.1em;margin-top:12px}
 .fall{position:absolute;top:-15vh;font-size:28px;animation:fall linear infinite;opacity:.9;pointer-events:none}
 @keyframes fall{to{transform:translate(var(--drift),120vh) rotate(720deg)}}
@@ -168,7 +162,7 @@ p{line-height:1.65}
   .sticker{width:clamp(66px,20vw,88px)}
   .sticker.medium{width:clamp(72px,23vw,94px)}
   .sticker.big{width:clamp(80px,27vw,112px)}
-  .left-bottom{left:-4%;bottom:6%}.right-bottom{right:-4%;bottom:6%}
+  .left-bottom{left:-4%;bottom:6%}.right-bottom{right:-4%;bottom:6%}.right-top{right:-1%;top:16%}
   .collage-copy{width:min(94%,510px);padding:20px 22px}
   .collage-copy h2{font-size:clamp(1.8rem,7.2vw,2.4rem)}
   .collage-copy .sub{font-size:clamp(.88rem,3.8vw,1rem);line-height:1.4;margin-top:12px}
@@ -202,12 +196,11 @@ p{line-height:1.65}
 <input class="navstate" type="radio" name="page" id="p5">
 <input class="navstate" type="radio" name="page" id="p6">
 <input class="navstate" type="radio" name="page" id="p7">
-<input class="navstate" type="radio" name="page" id="p8">
 
 <div class="app">
   <div class="progress">
     <i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i>
-    <i class="dot d5"></i><i class="dot d6"></i><i class="dot d7"></i><i class="dot d8"></i>
+    <i class="dot d5"></i><i class="dot d6"></i><i class="dot d7"></i>
   </div>
   <button class="music" id="musicBtn" type="button" aria-label="Activar música">♫</button>
 
@@ -285,7 +278,7 @@ p{line-height:1.65}
 
 
   <section class="scene s6">
-    <img class="sticker big left-bottom" src="assets/stickers/gatito-vaquero-rosas.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/mapache-girasoles.png" alt="">
+    <img class="sticker big left-bottom" src="assets/stickers/gatito-vaquero-rosas.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/mapache-girasoles.png" alt=""><img class="sticker medium right-top" src="assets/stickers/gatito-ramo-hola-grande.png" alt="">
     <div class="wrap">
       <div class="eyebrow reveal">Y seguimos contando</div>
       <div class="big3 reveal delay2">3</div>
@@ -295,19 +288,8 @@ p{line-height:1.65}
     <label class="next" for="p7">Tengo más para ti →</label>
   </section>
 
-  <section class="scene s7">
-    <img class="sticker big right-bottom" src="assets/stickers/gatito-ramo-hola-grande.png" alt="">
-    <div class="wrap">
-      <div class="eyebrow reveal">Antes del final</div>
-      <h2 class="reveal delay2">Te escondí unas cosas.</h2>
-      <p class="sub reveal delay3">Toca las flores.</p>
-      <div class="secret-row reveal delay4" id="secretFlowers"></div>
-      <div class="secretText" id="secretText">🌻</div>
-    </div>
-    <label class="next" for="p8">Última sorpresa →</label>
-  </section>
 
-  <section class="scene s8">
+  <section class="scene s7">
     <img class="sticker big left-bottom" src="assets/stickers/perrito-flor-amarilla.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/gatito-flor-amarilla.png" alt="">
     <div class="wrap">
       <div id="rain"></div>
@@ -366,12 +348,6 @@ p{line-height:1.65}
     blossom.appendChild(flower);bouquet.appendChild(blossom);flowerButtons.push(flower);
   });
 
-  const secrets=["Me sigues gustando muchísimo.","Gracias por estos tres años.","Quiero seguir viviendo primeras veces contigo.","Perdón si hoy esperabas algo diferente.","No olvidé el día. Pensé en ti.","Te sigo debiendo un ramo de verdad.","Mi intención con esto era verte sonreír.","Te amo, Patricia."];
-  const sf=document.getElementById('secretFlowers'), st=document.getElementById('secretText');
-  secrets.forEach(function(s,i){
-    const b=document.createElement('button');b.className='secret';b.type='button';b.textContent=i%2?'🌼':'🌻';
-    b.addEventListener('click',function(){st.textContent=s;});sf.appendChild(b);
-  });
 
   const rain=document.getElementById('rain');
   for(let i=0;i<36;i++){

@@ -224,9 +224,9 @@ p{line-height:1.65}
   .s6 .bouquet{--flower-size:clamp(60px,18vw,76px);width:min(380px,94vw);height:255px;margin:6px auto 0}
   .s6 .flower-note{min-height:58px;padding:10px 14px;font-size:.82rem}
   .s6 .sub{font-size:.92rem;line-height:1.42}
-  .s6 .sticker.left-bottom,.s6 .sticker.right-bottom{bottom:29%}
+  .s6 .sticker.left-bottom,.s6 .sticker.right-bottom{bottom:max(18px,env(safe-area-inset-bottom))}
   .s6 .sticker.left-bottom{width:min(15vw,9svh,60px)}
-  .s6 .sticker.right-bottom{width:min(18vw,10svh,66px)}
+  .s6 .sticker.right-bottom{width:min(18vw,10svh,66px,max(28px,calc(50vw - 115px)))}
   .s6 .bouquet-side-left{left:max(12px,env(safe-area-inset-left));bottom:46%;width:min(17vw,22svh,70px)}
   .s6 .bouquet-side-right{right:max(12px,env(safe-area-inset-right));bottom:46%;width:min(19vw,30svh,78px)}
   .s7 .sticker.left-bottom,.s7 .sticker.right-bottom{bottom:max(18px,env(safe-area-inset-bottom))}
@@ -256,6 +256,8 @@ p{line-height:1.65}
   .s1 .sticker.left-bottom{bottom:calc(max(18px,env(safe-area-inset-bottom)) + 28px)}
 }
 @media(min-width:360px) and (min-height:800px) and (max-width:650px){
+  .s6 .sticker.left-bottom{left:max(7px,env(safe-area-inset-left));bottom:calc(max(18px,env(safe-area-inset-bottom)) + 40px);width:min(21.5vw,11svh,90px)}
+  .s6 .sticker.right-bottom{bottom:calc(max(18px,env(safe-area-inset-bottom)) + 50px);width:min(26vw,100px)}
   .s7 .sticker.big{width:min(34vw,16svh,140px)}
   .s7 .sticker.medium{width:min(40vw,19svh,165px)}
   .s7 .sticker.left-bottom,.s7 .sticker.right-bottom{bottom:calc(max(18px,env(safe-area-inset-bottom)) + 52px)}

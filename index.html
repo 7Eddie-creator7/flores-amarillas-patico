@@ -34,7 +34,7 @@ body::after{
   transform:translateX(38px) scale(.985);
   transition:opacity .45s ease,transform .55s cubic-bezier(.22,.8,.22,1),visibility .45s;
 }
-.wrap{width:min(900px,100%);text-align:center}
+.wrap{width:min(900px,100%);text-align:center;position:relative;z-index:3}
 .eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.18em;color:#8f741b;font-weight:900;margin-bottom:10px}
 h1,h2{font-family:Georgia,"Times New Roman",serif;margin:.08em 0}
 h1{font-size:clamp(3rem,12vw,6.8rem);line-height:.88}
@@ -90,6 +90,34 @@ p{line-height:1.65}
 .delay2{animation-delay:.16s!important}.delay3{animation-delay:.32s!important}.delay4{animation-delay:.48s!important}
 @keyframes reveal{to{opacity:1;transform:none}}
 
+.sticker{
+  position:absolute;z-index:2;pointer-events:none;user-select:none;
+  width:clamp(130px,17vw,240px);aspect-ratio:1/1;
+  background-image:url("assets/stickers.webp");
+  background-repeat:no-repeat;background-size:400% 300%;
+  filter:drop-shadow(0 14px 24px rgba(56,40,0,.14));
+  animation:stickerFloat 5.5s ease-in-out infinite;
+}
+.sticker.small{width:clamp(100px,13vw,175px)}
+.sticker.medium{width:clamp(125px,16vw,220px)}
+.sticker.big{width:clamp(165px,21vw,300px)}
+@keyframes stickerFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+.st0{background-position:0% 0%}
+.st1{background-position:33.333% 0%}
+.st2{background-position:66.667% 0%}
+.st3{background-position:100% 0%}
+.st4{background-position:0% 50%}
+.st5{background-position:33.333% 50%}
+.st6{background-position:66.667% 50%}
+.st7{background-position:100% 50%}
+.st8{background-position:0% 100%}
+.st9{background-position:33.333% 100%}
+.st10{background-position:66.667% 100%}
+.left-top{left:2%;top:8%}.right-top{right:2%;top:8%}
+.left-mid{left:2%;top:33%}.right-mid{right:2%;top:33%}
+.left-bottom{left:2%;bottom:11%}.right-bottom{right:2%;bottom:11%}
+
+
 .bouquet{position:relative;width:min(520px,94vw);height:315px;margin:10px auto -4px}
 .stem{position:absolute;bottom:12px;width:7px;height:210px;border-radius:8px;background:linear-gradient(#7ca15f,#4e7339);transform-origin:bottom center}
 .leaf{position:absolute;width:64px;height:25px;background:linear-gradient(135deg,#89ad6b,#557d3e);border-radius:100% 0 100% 0;left:3px;bottom:70px;transform-origin:left center}
@@ -125,6 +153,11 @@ p{line-height:1.65}
 
 @media(max-width:650px){
   .scene{padding:64px 14px 88px}
+  .sticker{width:100px;opacity:.93}
+  .sticker.small{width:82px}.sticker.medium{width:96px}.sticker.big{width:125px}
+  .left-top{left:-3%;top:10%}.right-top{right:-3%;top:10%}
+  .left-mid{left:-4%;top:38%}.right-mid{right:-4%;top:38%}
+  .left-bottom{left:-4%;bottom:14%}.right-bottom{right:-4%;bottom:14%}
   .letter{padding:20px 18px}.letter p{line-height:1.48;margin:8px 0}
   .reasons{grid-template-columns:repeat(2,1fr);gap:7px}.reason{min-height:62px;font-size:.79rem;padding:8px}
   .photo{height:49vh}.bouquet{transform:scale(.88);margin-top:-5px}
@@ -149,6 +182,7 @@ p{line-height:1.65}
   <button class="music" id="musicBtn" type="button" aria-label="Activar música">♫</button>
 
   <section class="scene s1">
+    <div class="sticker st10 big left-bottom" aria-hidden="true"></div><div class="sticker st6 small right-top" aria-hidden="true"></div>
     <div class="wrap">
       <div class="eyebrow reveal">21 de septiembre · para Patricia</div>
       <h1 class="reveal delay2">Tengo algo<br>para ti 💛</h1>
@@ -159,6 +193,7 @@ p{line-height:1.65}
   </section>
 
   <section class="scene s2">
+    <div class="sticker st5 big left-bottom" aria-hidden="true"></div><div class="sticker st2 medium right-bottom" aria-hidden="true"></div>
     <div class="wrap">
       <div class="eyebrow reveal">Primero</div>
       <h2 class="reveal delay2">Tus flores amarillas.</h2>
@@ -169,6 +204,7 @@ p{line-height:1.65}
   </section>
 
   <section class="scene s3">
+    <div class="sticker st0 big left-bottom" aria-hidden="true"></div>
     <div class="wrap">
       <div class="letter card reveal">
         <div class="eyebrow">Una carta para ti</div>
@@ -183,6 +219,7 @@ p{line-height:1.65}
   </section>
 
   <section class="scene s4">
+    <div class="sticker st3 medium right-bottom" aria-hidden="true"></div>
     <div class="wrap">
       <div class="eyebrow reveal">Nuestro pequeño álbum</div>
       <h2 class="reveal delay2">Nosotros.</h2>
@@ -195,6 +232,7 @@ p{line-height:1.65}
   </section>
 
   <section class="scene s5">
+    <div class="sticker st8 medium left-bottom" aria-hidden="true"></div><div class="sticker st9 medium right-bottom" aria-hidden="true"></div>
     <div class="wrap">
       <div class="eyebrow reveal">12 razones</div>
       <h2 class="reveal delay2">Por las que te elegiría otra vez.</h2>
@@ -204,6 +242,7 @@ p{line-height:1.65}
   </section>
 
   <section class="scene s6">
+    <div class="sticker st1 big left-bottom" aria-hidden="true"></div>
     <div class="wrap">
       <div class="eyebrow reveal">Y seguimos contando</div>
       <div class="big3 reveal delay2">3</div>
@@ -214,6 +253,7 @@ p{line-height:1.65}
   </section>
 
   <section class="scene s7">
+    <div class="sticker st4 big right-bottom" aria-hidden="true"></div>
     <div class="wrap">
       <div class="eyebrow reveal">Antes del final</div>
       <h2 class="reveal delay2">Te escondí unas cosas.</h2>
@@ -225,6 +265,7 @@ p{line-height:1.65}
   </section>
 
   <section class="scene s8">
+    <div class="sticker st7 big left-bottom" aria-hidden="true"></div>
     <div class="wrap">
       <div id="rain"></div>
       <div class="eyebrow reveal">Feliz 21 de septiembre</div>

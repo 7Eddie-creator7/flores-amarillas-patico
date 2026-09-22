@@ -186,20 +186,23 @@ p{line-height:1.65}
 
 @media(max-width:650px){
   .scene{padding:64px 14px 88px}
-  .sticker{width:clamp(66px,20vw,88px)}
-  .sticker.medium{width:clamp(72px,23vw,94px)}
-  .sticker.big{width:clamp(80px,27vw,112px)}
-  .left-bottom{left:-4%;bottom:6%}.right-bottom{right:-4%;bottom:6%}
+  .sticker{width:min(18vw,9svh,74px)}
+  .sticker.medium{width:min(19vw,9svh,76px)}
+  .sticker.big{width:min(21vw,10svh,82px)}
+  .left-bottom{left:max(12px,env(safe-area-inset-left));bottom:calc(max(18px,env(safe-area-inset-bottom)) + 64px)}
+  .right-bottom{right:max(12px,env(safe-area-inset-right));bottom:calc(max(18px,env(safe-area-inset-bottom)) + 64px)}
   .right-top{right:0;top:12%}
   .collage-copy{width:min(94%,510px);padding:20px 22px}
   .collage-copy h2{font-size:clamp(1.8rem,7.2vw,2.4rem)}
   .collage-copy .sub{font-size:clamp(.88rem,3.8vw,1rem);line-height:1.4;margin-top:12px}
-  .collage-rizos{width:clamp(72px,22vw,92px);left:4%;top:9%}
-  .collage-telefonos{width:clamp(125px,39vw,165px);right:2%;top:10%}
-  .collage-selfie{width:clamp(70px,22vw,92px);left:3%;top:auto;bottom:18%}
-  .collage-concierto{width:clamp(58px,17vw,72px);left:37%;bottom:18%;border-width:4px;border-radius:9px}
-  .collage-formal{width:clamp(95px,30vw,125px);right:3%;bottom:18%}
+  .collage-rizos{width:min(20vw,78px);left:18px;top:max(72px,11svh)}
+  .collage-telefonos{width:min(36vw,138px);right:18px;top:max(72px,11svh)}
+  .collage-selfie{width:min(20vw,80px);left:18px;top:auto;bottom:max(94px,18svh)}
+  .collage-concierto{width:min(16vw,68px);left:37%;bottom:max(94px,18svh);border-width:4px;border-radius:9px}
+  .collage-formal{width:min(27vw,110px);right:18px;bottom:max(94px,18svh)}
   .letter{padding:20px 18px}.letter p{line-height:1.48;margin:8px 0}
+  .s3 .sticker.medium{top:max(64px,calc(env(safe-area-inset-top) + 58px));bottom:auto;width:min(12vw,6svh,44px)}
+  .s5 .sticker.medium{bottom:max(24px,calc(env(safe-area-inset-bottom) + 12px));width:min(11vw,5.4svh,40px)}
   .s3 .photo{padding:10px 9px 8px;gap:3px}
   .s3 .memory-top{gap:7px}
   .s3 .initials{font-size:.78rem}
@@ -215,9 +218,15 @@ p{line-height:1.65}
   .s6 .bouquet{--flower-size:clamp(60px,18vw,76px);width:min(380px,94vw);height:255px;margin:6px auto 0}
   .s6 .flower-note{min-height:58px;padding:10px 14px;font-size:.82rem}
   .s6 .sub{font-size:.92rem;line-height:1.42}
-  .s6 .bouquet-side-left{left:1%;bottom:35%;width:min(clamp(48px,16vw,74px),20svh)}
-  .s6 .bouquet-side-right{right:1%;bottom:35%;width:min(clamp(58px,19vw,85px),30svh)}
-  .s7 .home-note{max-width:min(340px,100%);margin-top:10px;padding:8px 12px}
+  .s6 .sticker.left-bottom,.s6 .sticker.right-bottom{bottom:30%}
+  .s6 .sticker.left-bottom{width:min(12vw,7svh,46px)}
+  .s6 .sticker.right-bottom{width:min(16vw,8svh,58px)}
+  .s6 .bouquet-side-left{left:max(12px,env(safe-area-inset-left));bottom:44%;width:min(15vw,20svh,68px)}
+  .s6 .bouquet-side-right{right:max(12px,env(safe-area-inset-right));bottom:44%;width:min(18vw,28svh,80px)}
+  .s7 .sticker.left-bottom,.s7 .sticker.right-bottom{bottom:max(24px,calc(env(safe-area-inset-bottom) + 12px))}
+  .s7 .sticker.big{width:min(16vw,8svh,52px)}
+  .s7 .sticker.medium{width:min(15vw,8svh,52px)}
+  .s7 .home-note{max-width:calc(100% - 136px);margin-top:10px;padding:8px 12px}
 }
 @media(max-height:650px){
   .s6 h2{font-size:clamp(1.7rem,6vw,2.2rem)}
@@ -231,8 +240,6 @@ p{line-height:1.65}
 @media(max-height:650px) and (max-width:650px){
   .s6 .bouquet{--flower-size:54px;height:220px}
   .s6 .flower-note{min-height:52px;padding:8px 12px;font-size:.76rem}
-  .s6 .bouquet-side-left{bottom:38%;width:min(clamp(48px,14vw,60px),20svh)}
-  .s6 .bouquet-side-right{bottom:37%;width:min(clamp(58px,17vw,72px),30svh)}
 }
 </style>
 </head>

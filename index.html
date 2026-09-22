@@ -148,9 +148,22 @@ p{line-height:1.65}
 .letter p{font-family:Georgia,serif;font-size:clamp(1rem,2.4vw,1.16rem);margin:10px 0}
 .signature{font-family:"Brush Script MT",cursive;font-size:1.9rem;margin-top:10px}
 
-.photo{max-width:720px;height:min(56vh,430px);margin:14px auto 0;display:grid;place-items:center;background:linear-gradient(145deg,#fffdf1,#ffe879);overflow:hidden;padding:20px;position:relative}
-.initials{font:700 clamp(4rem,13vw,7rem)/1 Georgia,serif}
-.photo .caption{position:absolute;left:16px;right:16px;bottom:16px;padding:11px 14px;border-radius:18px;background:rgba(255,255,255,.76);font-family:Georgia,serif}
+.s3 .photo{width:min(720px,100%);height:min(59svh,500px);margin:12px auto 0;display:flex;flex-direction:column;gap:5px;align-items:stretch;background:linear-gradient(145deg,#fffdf1,#ffe879);overflow:hidden;padding:12px 16px 10px;position:relative}
+.s3 .memory-top{display:flex;align-items:center;justify-content:center;gap:10px;position:relative;z-index:7}
+.s3 .initials{flex:none;font:700 .95rem/1 Georgia,serif;color:#9b730a;letter-spacing:.04em}
+.s3 .memory-top p{margin:0;font-size:.88rem;line-height:1.2}
+.s3 .memory-board{position:relative;flex:1;min-height:0;width:100%}
+.s3 .memory{position:absolute;box-sizing:border-box;margin:0;padding:4px 4px 9px;border:1px solid rgba(126,93,32,.14);border-radius:10px;background:#fff;box-shadow:0 9px 18px rgba(79,53,9,.18);overflow:hidden;transform:rotate(var(--tilt))}
+.s3 .memory img{display:block;width:100%;height:100%;border-radius:6px;object-fit:contain;object-position:center;image-rendering:auto}
+.s3 .memory-1{left:6%;top:4%;width:23%;aspect-ratio:3/4;--tilt:-4deg;z-index:2}
+.s3 .memory-2{left:2%;bottom:1%;width:28%;aspect-ratio:3/2;--tilt:3deg;z-index:4}
+.s3 .memory-3{right:4%;top:1%;width:20%;aspect-ratio:3/4;--tilt:4deg;z-index:4}
+.s3 .memory-3 img{position:absolute;left:50%;top:50%;width:132%;height:64%;max-width:none;transform:translate(-50%,-50%) rotate(-90deg)}
+.s3 .memory-4{left:34%;top:4%;width:31%;aspect-ratio:3/4;--tilt:-2deg;z-index:3}
+.s3 .memory-5{left:64%;bottom:1%;width:20%;aspect-ratio:3/4;--tilt:3deg;z-index:2}
+.s3 .memory-6{left:34%;bottom:0;width:28%;aspect-ratio:16/9;--tilt:-3deg;z-index:5}
+.s3 .memory-note{margin:0;color:var(--muted);font-size:.85rem;line-height:1.25}
+.s3 .photo .caption{padding:7px 10px;border-radius:14px;background:rgba(255,255,255,.76);font: .88rem/1.25 Georgia,serif}
 
 .big3{font:700 clamp(6rem,25vw,12rem)/.76 Georgia,serif;color:#bd9100;margin:8px 0}
 .finalFlowers{font-size:clamp(2.1rem,8vw,4rem);letter-spacing:.1em;margin-top:12px}
@@ -173,7 +186,18 @@ p{line-height:1.65}
   .collage-concierto{width:clamp(58px,17vw,72px);left:37%;bottom:18%;border-width:4px;border-radius:9px}
   .collage-formal{width:clamp(95px,30vw,125px);right:3%;bottom:18%}
   .letter{padding:20px 18px}.letter p{line-height:1.48;margin:8px 0}
-  .photo{height:49vh}
+  .s3 .photo{padding:10px 9px 8px;gap:3px}
+  .s3 .memory-top{gap:7px}
+  .s3 .initials{font-size:.78rem}
+  .s3 .memory-top p{font-size:.73rem}
+  .s3 .memory-1{left:2%;top:7%;width:24%}
+  .s3 .memory-2{left:1%;bottom:2%;width:31%}
+  .s3 .memory-3{right:1%;top:1%;width:25%}
+  .s3 .memory-4{left:31%;top:6%;width:38%}
+  .s3 .memory-5{left:auto;right:1%;bottom:2%;width:22%}
+  .s3 .memory-6{left:34%;bottom:0;width:32%}
+  .s3 .memory-note{font-size:.72rem;line-height:1.2}
+  .s3 .photo .caption{padding:5px 7px;font-size:.76rem;line-height:1.2}
   .s6 .bouquet{--flower-size:clamp(60px,18vw,76px);width:min(380px,94vw);height:255px;margin:6px auto 0}
   .s6 .flower-note{min-height:58px;padding:10px 14px;font-size:.82rem}
   .s6 .sub{font-size:.92rem;line-height:1.42}
@@ -235,7 +259,16 @@ p{line-height:1.65}
       <div class="eyebrow reveal">Nuestro pequeño álbum</div>
       <h2 class="reveal delay2">Nosotros.</h2>
       <div class="photo card reveal delay3">
-        <div><div class="initials">E + P</div><p>Mi lugar favorito sigue siendo donde estés tú.</p><p style="color:var(--muted);font-size:.88rem">Aquí después ponemos una foto real de ustedes.</p></div>
+        <div class="memory-top"><span class="initials">E + P</span><p>Mi lugar favorito sigue siendo donde estés tú.</p></div>
+        <div class="memory-board">
+          <figure class="memory memory-1"><img src="assets/nosotros/foto-1.jpg" alt="Un momento juntos al aire libre"></figure>
+          <figure class="memory memory-2"><img src="assets/nosotros/foto-2.jpg" alt="Un recuerdo juntos en casa"></figure>
+          <figure class="memory memory-3"><img src="assets/nosotros/foto-3.jpg" alt="Una foto de los dos del 22 de septiembre de 2025"></figure>
+          <figure class="memory memory-4"><img src="assets/nosotros/foto-4.jpg" alt="Un recuerdo de los dos en la feria"></figure>
+          <figure class="memory memory-5"><img src="assets/nosotros/foto-5.jpg" alt="Una foto de los dos en un concierto"></figure>
+          <figure class="memory memory-6"><img src="assets/nosotros/foto-6.jpg" alt="Un momento compartido viendo la televisión"></figure>
+        </div>
+        <p class="memory-note">Un pedacito de todos los momentos que quiero seguir viviendo contigo.</p>
         <div class="caption">Una foto guarda un momento. Yo quiero seguir haciendo muchos contigo.</div>
       </div>
     </div>

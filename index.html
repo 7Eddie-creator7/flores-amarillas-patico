@@ -235,6 +235,8 @@ p{line-height:1.65}
 <input class="navstate" type="radio" name="page" id="p6">
 <input class="navstate" type="radio" name="page" id="p7">
 
+<audio id="bgMusic" src="assets/audio/heaven.mp3" preload="auto" loop></audio>
+
 <div class="app">
   <div class="progress">
     <i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i>
@@ -250,7 +252,7 @@ p{line-height:1.65}
       <p class="sub reveal delay3">Te mereces absolutamente todo en este mundo y te lo quiero dar. Y aunque hoy no pude llegar con tu ramito de flores, no quería que te quedaras con la tristeza de ver a los demás con el suyo, así que preparé algo con mucho esfuerzo para ti, mi pequeñita princesa.</p>
       <div class="reveal delay4" style="font-size:3.1rem">🌻</div>
     </div>
-    <label class="next" for="p2">Ver mi sorpresa →</label>
+    <label class="next" for="p2">Quiero contarte algo →</label>
   </section>
 
   <section class="scene s2">
@@ -263,7 +265,7 @@ p{line-height:1.65}
       <h2 class="reveal delay2">Así me siento por no haberte podido dar tus flores hoy 😞</h2>
       <p class="sub reveal delay3">Pero no quería que mi pequeñita princesa se quedara sin sus flores amarillas, así que te preparé esta sorpresa con muchísimo cariño.</p>
     </div>
-    <label class="next" for="p3">Última sorpresa →</label>
+    <label class="next" for="p3">Ver nuestros recuerdos →</label>
   </section>
 
   <section class="scene s3">
@@ -284,7 +286,7 @@ p{line-height:1.65}
         <div class="caption">Un pedacito de todos los momentos que quiero seguir viviendo contigo.</div>
       </div>
     </div>
-    <label class="next" for="p4">Seguir →</label>
+    <label class="next" for="p4">Y seguimos contando →</label>
   </section>
 
   <section class="scene s4">
@@ -295,7 +297,7 @@ p{line-height:1.65}
       <h2 class="reveal delay3">años de nosotros 💛</h2>
       <p class="sub reveal delay4">Y todavía quiero seguir coleccionando días, planes, risas y recuerdos contigo.</p>
     </div>
-    <label class="next" for="p5">Tengo más para ti →</label>
+    <label class="next" for="p5">Leer mi carta →</label>
   </section>
 
   <section class="scene s5">
@@ -310,7 +312,7 @@ p{line-height:1.65}
         <div class="signature">Con amor, Eduardo 💛</div>
       </div>
     </div>
-    <label class="next" for="p6">Ver nuestro recuerdo →</label>
+    <label class="next" for="p6">Ahora sí, tus flores →</label>
   </section>
 
   <section class="scene s6">
@@ -318,7 +320,6 @@ p{line-height:1.65}
     <img class="sticker bouquet-side bouquet-side-left" src="assets/stickers/eduardo-ramo-girasoles.png" alt="">
     <img class="sticker bouquet-side bouquet-side-right" src="assets/stickers/eduardo-disfraz-flor.png" alt="">
     <div class="wrap">
-      <div class="eyebrow reveal">Primero</div>
       <h2 class="reveal delay2">Tus flores amarillas.</h2>
       <p class="bouquet-hint reveal delay3">Dale clic a una flor para ver un lindo mensajito 🌼</p>
       <div class="bouquet" id="bouquet">
@@ -332,7 +333,7 @@ p{line-height:1.65}
       <span class="sr-only" id="flowerAnnouncement" aria-live="polite"></span>
       <p class="sub reveal delay4">Puede que no las puedas tener en un florero, pero las puedes conservar aquí para siempre. Te amo, mi pequeñita. &lt;3</p>
     </div>
-    <label class="next" for="p7">Seguir →</label>
+    <label class="next" for="p7">Una última cosita →</label>
   </section>
 
   <section class="scene s7">
@@ -340,7 +341,7 @@ p{line-height:1.65}
     <div class="wrap">
       <div id="rain"></div>
       <div class="eyebrow reveal">Feliz 21 de septiembre</div>
-      <h2 class="reveal delay2">Patricia, estas flores siempre van a ser tuyas.</h2>
+      <h2 class="reveal delay2">Pipinclita, estas flores siempre van a ser tuyas.</h2>
       <p class="sub reveal delay3">Las de hoy son virtuales. Las siguientes te las quiero dar en tus manos.</p>
       <div class="finalFlowers reveal delay4"><img src="assets/stickers/girasol-eduardo.png" alt=""> <img src="assets/stickers/girasol-eduardo.png" alt=""> 💛 <img src="assets/stickers/girasol-eduardo.png" alt=""> <img src="assets/stickers/girasol-eduardo.png" alt=""></div>
     </div>
@@ -401,31 +402,52 @@ p{line-height:1.65}
   }
 
   const musicBtn=document.getElementById('musicBtn');
-  let ctx=null,timer=null,playing=false;
-  function tone(freq,when,d){
-    const o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=freq;
-    g.gain.setValueAtTime(.0001,when);g.gain.exponentialRampToValueAtTime(.04,when+.03);g.gain.exponentialRampToValueAtTime(.0001,when+d);
-    o.connect(g);g.connect(ctx.destination);o.start(when);o.stop(when+d+.05);
+  const bgMusic=document.getElementById('bgMusic');
+  let userPaused=false;
+
+  function syncMusicButton(){
+    const isPlaying=!bgMusic.paused;
+    musicBtn.classList.toggle('playing',isPlaying);
+    musicBtn.textContent=isPlaying?'❚❚':'♫';
+    musicBtn.setAttribute('aria-label',isPlaying?'Pausar música':'Reanudar música');
   }
-  function phrase(){
-    if(!ctx||!playing)return;
-    const now=ctx.currentTime+.05;
-    [261.63,329.63,392,329.63,293.66,349.23,440,392].forEach(function(f,i){tone(f,now+i*.42,.68);});
-    timer=setTimeout(phrase,3600);
-  }
-  musicBtn.addEventListener('click',async function(){
+
+  async function startMusic(){
+    if(userPaused)return;
     try{
-      if(!playing){
-        const C=window.AudioContext||window.webkitAudioContext;
-        if(!C){musicBtn.textContent='×';return;}
-        ctx=new C();if(ctx.state==='suspended')await ctx.resume();
-        playing=true;musicBtn.classList.add('playing');musicBtn.textContent='❚❚';phrase();
-      }else{
-        playing=false;musicBtn.classList.remove('playing');musicBtn.textContent='♫';clearTimeout(timer);
-        if(ctx){await ctx.close();ctx=null;}
-      }
-    }catch(e){console.error(e);}
+      await bgMusic.play();
+    }catch(e){
+      // Algunos navegadores bloquean el autoplay con sonido hasta la primera interacción.
+    }
+  }
+
+  bgMusic.addEventListener('play',syncMusicButton);
+  bgMusic.addEventListener('pause',syncMusicButton);
+  bgMusic.addEventListener('ended',function(){
+    if(!userPaused)startMusic();
   });
+
+  musicBtn.addEventListener('click',async function(event){
+    event.stopPropagation();
+    if(bgMusic.paused){
+      userPaused=false;
+      try{await bgMusic.play();}catch(e){console.error(e);}
+    }else{
+      userPaused=true;
+      bgMusic.pause();
+    }
+    syncMusicButton();
+  });
+
+  ['pointerdown','touchstart','keydown'].forEach(function(type){
+    document.addEventListener(type,function firstInteraction(event){
+      if(event.target===musicBtn)return;
+      startMusic();
+    },{once:true,capture:true});
+  });
+
+  startMusic();
+  syncMusicButton();
 })();
 </script>
 </body>

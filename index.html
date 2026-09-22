@@ -65,9 +65,7 @@ p{line-height:1.65}
 #p4:checked ~ .app .s4,
 #p5:checked ~ .app .s5,
 #p6:checked ~ .app .s6,
-#p7:checked ~ .app .s7,
-#p8:checked ~ .app .s8,
-#p9:checked ~ .app .s9{
+#p7:checked ~ .app .s7{
   opacity:1;visibility:visible;pointer-events:auto;z-index:5;transform:none;
 }
 #p1:checked ~ .app .d1,
@@ -76,9 +74,7 @@ p{line-height:1.65}
 #p4:checked ~ .app .d4,
 #p5:checked ~ .app .d5,
 #p6:checked ~ .app .d6,
-#p7:checked ~ .app .d7,
-#p8:checked ~ .app .d8,
-#p9:checked ~ .app .d9{width:24px;background:var(--accent)}
+#p7:checked ~ .app .d7{width:24px;background:var(--accent)}
 
 .reveal{opacity:0;transform:translateY(18px) scale(.98)}
 #p1:checked ~ .app .s1 .reveal,
@@ -87,9 +83,7 @@ p{line-height:1.65}
 #p4:checked ~ .app .s4 .reveal,
 #p5:checked ~ .app .s5 .reveal,
 #p6:checked ~ .app .s6 .reveal,
-#p7:checked ~ .app .s7 .reveal,
-#p8:checked ~ .app .s8 .reveal,
-#p9:checked ~ .app .s9 .reveal{animation:reveal .7s cubic-bezier(.2,.8,.2,1) forwards}
+#p7:checked ~ .app .s7 .reveal{animation:reveal .7s cubic-bezier(.2,.8,.2,1) forwards}
 .delay2{animation-delay:.16s!important}.delay3{animation-delay:.32s!important}.delay4{animation-delay:.48s!important}
 @keyframes reveal{to{opacity:1;transform:none}}
 
@@ -101,11 +95,12 @@ p{line-height:1.65}
 .sticker.medium{width:clamp(125px,15vw,190px)}
 .sticker.big{width:clamp(145px,18vw,230px)}
 .left-bottom{left:2%;bottom:11%}.right-bottom{right:2%;bottom:11%}
+.right-top{right:2%;top:12%}
 
 .collage-copy{width:min(640px,calc(100% - 250px));padding:26px 34px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:28px;box-shadow:0 20px 55px rgba(93,69,8,.13)}
 .collage-copy h2{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05}
 .collage-copy .sub{margin-bottom:0}
-.s2 .next{max-width:calc(100% - 28px);text-align:center}
+.s6 .next{max-width:calc(100% - 28px);text-align:center}
 .collage-photo{position:absolute;z-index:2;display:block;height:auto;object-fit:contain;image-rendering:auto;pointer-events:none;user-select:none}
 .collage-rizos{width:clamp(120px,13vw,190px);left:5%;top:9%;transform:rotate(-8deg)}
 .collage-selfie{width:clamp(115px,12vw,180px);left:2%;top:40%;transform:rotate(6deg)}
@@ -132,9 +127,9 @@ p{line-height:1.65}
 .flower{position:relative;z-index:1;display:block;width:var(--flower-size);height:var(--flower-size);padding:0;border:0;background:none;cursor:pointer;touch-action:manipulation}
 .flower:focus-visible{outline:3px solid #ba8f00;outline-offset:3px;border-radius:50%}
 .flower-head{position:relative;display:block;width:100%;height:100%;opacity:0;transform:scale(.25) rotate(-10deg)}
-#p3:checked ~ .app .s3 .flower-head{animation:flowerBloom .75s cubic-bezier(.18,.8,.25,1.2) both;animation-delay:var(--bloom-delay)}
-#p3:checked ~ .app .s3 .flower.visited .flower-head{animation:none;opacity:1;transform:none}
-#p3:checked ~ .app .s3 .flower.selected .flower-head{animation:flowerTouch .7s ease-in-out both;animation-delay:0s}
+#p5:checked ~ .app .s5 .flower-head{animation:flowerBloom .75s cubic-bezier(.18,.8,.25,1.2) both;animation-delay:var(--bloom-delay)}
+#p5:checked ~ .app .s5 .flower.visited .flower-head{animation:none;opacity:1;transform:none}
+#p5:checked ~ .app .s5 .flower.selected .flower-head{animation:flowerTouch .7s ease-in-out both;animation-delay:0s}
 @keyframes flowerBloom{to{opacity:1;transform:scale(1) rotate(0)}}
 @keyframes flowerTouch{0%,100%{opacity:1;transform:scale(1) rotate(0)}38%{transform:scale(1.12) rotate(-4deg)}68%{transform:scale(1.05) rotate(3deg)}}
 .petal{position:absolute;left:38%;top:1%;width:24%;height:50%;border-radius:65% 65% 42% 42%;transform-origin:50% 96%;background:linear-gradient(155deg,#fffbd3 0%,#ffeb71 28%,#f8cc31 78%,#e8a91c 100%);box-shadow:inset 2px 0 5px rgba(255,255,255,.5),inset -2px -3px 5px rgba(156,100,0,.12)}
@@ -144,9 +139,10 @@ p{line-height:1.65}
 .flower.selected .flower-center{box-shadow:inset 0 2px 5px rgba(33,21,5,.38),0 0 0 4px rgba(255,232,117,.9)}
 .flower-note{position:absolute;left:50%;top:calc(50% + 18px);z-index:3;display:grid;place-items:center;width:min(210px,62vw);min-height:64px;padding:12px 18px;border:2px solid #e9c763;border-radius:49% 51% 47% 53% / 43% 45% 55% 57%;background:rgba(255,252,225,.97);box-shadow:0 9px 22px rgba(108,74,12,.18);color:#5d4517;font:700 .91rem/1.28 Georgia,serif;text-align:center;opacity:0;visibility:hidden;transform:translate(-50%,-50%) scale(.25);transition:opacity .32s ease,transform .48s cubic-bezier(.2,.8,.25,1.1);pointer-events:none;overflow-wrap:break-word}
 .flower.selected .flower-note{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1)}
-.s3 .sub{max-width:620px;margin:9px auto 0}
-.s3 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media(prefers-reduced-motion:reduce){#p3:checked ~ .app .s3 .flower-head,#p3:checked ~ .app .s3 .flower.selected .flower-head{animation:none;opacity:1;transform:none}.flower-note{transition:none}}
+.s5 .sub{max-width:620px;margin:9px auto 0}
+.s5 .bouquet-hint{margin:8px auto 0;color:var(--muted);font-size:.95rem;line-height:1.35}
+.s5 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(prefers-reduced-motion:reduce){#p5:checked ~ .app .s5 .flower-head,#p5:checked ~ .app .s5 .flower.selected .flower-head{animation:none;opacity:1;transform:none}.flower-note{transition:none}}
 
 .letter{max-width:760px;margin:auto;padding:26px;text-align:left}
 .letter p{font-family:Georgia,serif;font-size:clamp(1rem,2.4vw,1.16rem);margin:10px 0}
@@ -156,18 +152,7 @@ p{line-height:1.65}
 .initials{font:700 clamp(4rem,13vw,7rem)/1 Georgia,serif}
 .photo .caption{position:absolute;left:16px;right:16px;bottom:16px;padding:11px 14px;border-radius:18px;background:rgba(255,255,255,.76);font-family:Georgia,serif}
 
-.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;max-width:820px;margin:16px auto 0}
-.reason{min-height:88px;padding:12px;border-radius:18px;background:rgba(255,255,255,.76);border:1px solid var(--line);display:grid;place-items:center;font-family:Georgia,serif;font-size:.94rem;opacity:0;transform:scale(.75) translateY(12px)}
-#p6:checked ~ .app .s6 .reason{animation:pop .48s cubic-bezier(.2,.9,.25,1.15) forwards}
-@keyframes pop{to{opacity:1;transform:none}}
-.reason:nth-child(1){animation-delay:.10s}.reason:nth-child(2){animation-delay:.16s}.reason:nth-child(3){animation-delay:.22s}.reason:nth-child(4){animation-delay:.28s}
-.reason:nth-child(5){animation-delay:.34s}.reason:nth-child(6){animation-delay:.40s}.reason:nth-child(7){animation-delay:.46s}.reason:nth-child(8){animation-delay:.52s}
-.reason:nth-child(9){animation-delay:.58s}.reason:nth-child(10){animation-delay:.64s}.reason:nth-child(11){animation-delay:.70s}.reason:nth-child(12){animation-delay:.76s}
-
 .big3{font:700 clamp(6rem,25vw,12rem)/.76 Georgia,serif;color:#bd9100;margin:8px 0}
-.secret-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:16px auto 0;max-width:620px}
-.secret{width:56px;height:56px;border:0;border-radius:50%;background:white;font-size:1.65rem;box-shadow:0 8px 20px rgba(89,63,0,.12);cursor:pointer}
-.secretText{height:48px;margin:12px auto 0;font:1.2rem/1.35 Georgia,serif;color:#6d5410}
 .finalFlowers{font-size:clamp(2.1rem,8vw,4rem);letter-spacing:.1em;margin-top:12px}
 .fall{position:absolute;top:-15vh;font-size:28px;animation:fall linear infinite;opacity:.9;pointer-events:none}
 @keyframes fall{to{transform:translate(var(--drift),120vh) rotate(720deg)}}
@@ -178,6 +163,7 @@ p{line-height:1.65}
   .sticker.medium{width:clamp(72px,23vw,94px)}
   .sticker.big{width:clamp(80px,27vw,112px)}
   .left-bottom{left:-4%;bottom:6%}.right-bottom{right:-4%;bottom:6%}
+  .right-top{right:0;top:12%}
   .collage-copy{width:min(94%,510px);padding:20px 22px}
   .collage-copy h2{font-size:clamp(1.8rem,7.2vw,2.4rem)}
   .collage-copy .sub{font-size:clamp(.88rem,3.8vw,1rem);line-height:1.4;margin-top:12px}
@@ -187,20 +173,19 @@ p{line-height:1.65}
   .collage-concierto{width:clamp(58px,17vw,72px);left:37%;bottom:18%;border-width:4px;border-radius:9px}
   .collage-formal{width:clamp(95px,30vw,125px);right:3%;bottom:18%}
   .letter{padding:20px 18px}.letter p{line-height:1.48;margin:8px 0}
-  .reasons{grid-template-columns:repeat(2,1fr);gap:7px}.reason{min-height:62px;font-size:.79rem;padding:8px}
   .photo{height:49vh}
-  .s3 .bouquet{--flower-size:clamp(60px,18vw,76px);width:min(380px,94vw);height:255px;margin:6px auto 0}
-  .s3 .flower-note{min-height:58px;padding:10px 14px;font-size:.82rem}
-  .s3 .sub{font-size:.92rem;line-height:1.42}
+  .s5 .bouquet{--flower-size:clamp(60px,18vw,76px);width:min(380px,94vw);height:255px;margin:6px auto 0}
+  .s5 .flower-note{min-height:58px;padding:10px 14px;font-size:.82rem}
+  .s5 .sub{font-size:.92rem;line-height:1.42}
 }
 @media(max-height:650px){
-  .s3 h2{font-size:clamp(1.7rem,6vw,2.2rem)}
-  .s3 .bouquet{--flower-size:clamp(54px,6vw,72px);height:240px;margin:0 auto}
-  .s3 .sub{margin:5px auto 0;font-size:.84rem;line-height:1.3}
+  .s5 h2{font-size:clamp(1.7rem,6vw,2.2rem)}
+  .s5 .bouquet{--flower-size:clamp(54px,6vw,72px);height:240px;margin:0 auto}
+  .s5 .sub{margin:5px auto 0;font-size:.84rem;line-height:1.3}
 }
 @media(max-height:650px) and (max-width:650px){
-  .s3 .bouquet{--flower-size:54px;height:220px}
-  .s3 .flower-note{min-height:52px;padding:8px 12px;font-size:.76rem}
+  .s5 .bouquet{--flower-size:54px;height:220px}
+  .s5 .flower-note{min-height:52px;padding:8px 12px;font-size:.76rem}
 }
 </style>
 </head>
@@ -212,14 +197,11 @@ p{line-height:1.65}
 <input class="navstate" type="radio" name="page" id="p5">
 <input class="navstate" type="radio" name="page" id="p6">
 <input class="navstate" type="radio" name="page" id="p7">
-<input class="navstate" type="radio" name="page" id="p8">
-<input class="navstate" type="radio" name="page" id="p9">
 
 <div class="app">
   <div class="progress">
     <i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i>
-    <i class="dot d5"></i><i class="dot d6"></i><i class="dot d7"></i><i class="dot d8"></i>
-    <i class="dot d9"></i>
+    <i class="dot d5"></i><i class="dot d6"></i><i class="dot d7"></i>
   </div>
   <button class="music" id="musicBtn" type="button" aria-label="Activar música">♫</button>
 
@@ -235,39 +217,31 @@ p{line-height:1.65}
   </section>
 
   <section class="scene s2">
-    <img class="collage-photo collage-rizos" src="assets/collage/retrato-rizos.png" alt="">
-    <img class="collage-photo collage-selfie" src="assets/collage/selfie-primer-plano.png" alt="">
-    <img class="collage-photo collage-concierto" src="assets/collage/foto-concierto.jpeg" alt="">
-    <img class="collage-photo collage-telefonos" src="assets/collage/telefonos-concierto.png" alt="">
-    <img class="collage-photo collage-formal" src="assets/collage/retrato-formal.png" alt="">
-    <div class="wrap collage-copy">
-      <h2 class="reveal delay2">Así me siento por no haberte podido dar tus flores hoy 😞</h2>
-      <p class="sub reveal delay3">Pero no quería que mi pequeñita princesa se quedara sin sus flores amarillas, así que te preparé esta sorpresa con muchísimo cariño.</p>
+    <img class="sticker medium left-bottom" src="assets/stickers/shiba-rosas-para-ti.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/gato-negro-girasol.png" alt="">
+    <div class="wrap">
+      <div class="eyebrow reveal">Nuestro pequeño álbum</div>
+      <h2 class="reveal delay2">Nosotros.</h2>
+      <div class="photo card reveal delay3">
+        <div><div class="initials">E + P</div><p>Mi lugar favorito sigue siendo donde estés tú.</p><p style="color:var(--muted);font-size:.88rem">Aquí después ponemos una foto real de ustedes.</p></div>
+        <div class="caption">Una foto guarda un momento. Yo quiero seguir haciendo muchos contigo.</div>
+      </div>
     </div>
-    <label class="next" for="p3">Ahora sí, tus flores amarillas →</label>
+    <label class="next" for="p3">Seguir →</label>
   </section>
 
   <section class="scene s3">
-    <img class="sticker big left-bottom" src="assets/stickers/girasol-primavera.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/gatito-ramo-rosas.png" alt="">
+    <img class="sticker big left-bottom" src="assets/stickers/gatito-vaquero-rosas.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/mapache-girasoles.png" alt="">
     <div class="wrap">
-      <div class="eyebrow reveal">Primero</div>
-      <h2 class="reveal delay2">Tus flores amarillas.</h2>
-      <div class="bouquet" id="bouquet">
-        <svg class="bouquet-stems" viewBox="0 0 500 310" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-          <defs><linearGradient id="bouquetStemGreen"><stop stop-color="#547e3d"/><stop offset=".5" stop-color="#95ba6f"/><stop offset="1" stop-color="#4d7939"/></linearGradient></defs>
-          <path class="stem-line" d="M185 55 Q194 182 250 290 M250 46 Q248 188 250 290 M315 55 Q305 184 250 290 M150 120 Q179 211 250 290 M250 135 Q251 218 250 290 M350 120 Q320 211 250 290 M210 190 Q232 252 250 290 M290 190 Q270 252 250 290"/>
-          <path class="bouquet-leaf" d="M206 210 Q171 183 158 201 Q181 228 211 220Z M293 211 Q330 183 344 203 Q319 231 289 221Z M230 253 Q195 232 183 246 Q209 265 233 262Z M269 252 Q303 233 318 248 Q292 268 266 262Z"/>
-        </svg>
-        <span class="bouquet-bow" aria-hidden="true"><i></i></span>
-      </div>
-      <span class="sr-only" id="flowerAnnouncement" aria-live="polite"></span>
-      <p class="sub reveal delay4">Puede que no las puedas tener en un florero, pero las puedes conservar aquí para siempre. Te amo, mi pequeñita. &lt;3</p>
+      <div class="eyebrow reveal">Y seguimos contando</div>
+      <div class="big3 reveal delay2">3</div>
+      <h2 class="reveal delay3">años de nosotros 💛</h2>
+      <p class="sub reveal delay4">Y todavía quiero seguir coleccionando días, planes, risas y recuerdos contigo.</p>
     </div>
-    <label class="next" for="p4">Leer mi carta →</label>
+    <label class="next" for="p4">Tengo más para ti →</label>
   </section>
 
   <section class="scene s4">
-    <img class="sticker medium left-bottom" src="assets/stickers/hamster-flores-amarillas.png" alt="">
+    <img class="sticker medium left-bottom" src="assets/stickers/hamster-flores-amarillas.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/gato-ilustrado-flores.png" alt="">
     <div class="wrap">
       <div class="letter card reveal">
         <div class="eyebrow">Una carta para ti</div>
@@ -282,53 +256,41 @@ p{line-height:1.65}
   </section>
 
   <section class="scene s5">
-    <img class="sticker medium left-bottom" src="assets/stickers/shiba-rosas-para-ti.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/gato-negro-girasol.png" alt="">
+    <img class="sticker big left-bottom" src="assets/stickers/girasol-primavera.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/gatito-ramo-rosas.png" alt="">
     <div class="wrap">
-      <div class="eyebrow reveal">Nuestro pequeño álbum</div>
-      <h2 class="reveal delay2">Nosotros.</h2>
-      <div class="photo card reveal delay3">
-        <div><div class="initials">E + P</div><p>Mi lugar favorito sigue siendo donde estés tú.</p><p style="color:var(--muted);font-size:.88rem">Aquí después ponemos una foto real de ustedes.</p></div>
-        <div class="caption">Una foto guarda un momento. Yo quiero seguir haciendo muchos contigo.</div>
+      <div class="eyebrow reveal">Primero</div>
+      <h2 class="reveal delay2">Tus flores amarillas.</h2>
+      <p class="bouquet-hint reveal delay3">Dale clic a una flor para ver un lindo mensajito 🌼</p>
+      <div class="bouquet" id="bouquet">
+        <svg class="bouquet-stems" viewBox="0 0 500 310" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="bouquetStemGreen"><stop stop-color="#547e3d"/><stop offset=".5" stop-color="#95ba6f"/><stop offset="1" stop-color="#4d7939"/></linearGradient></defs>
+          <path class="stem-line" d="M185 55 Q194 182 250 290 M250 46 Q248 188 250 290 M315 55 Q305 184 250 290 M150 120 Q179 211 250 290 M250 135 Q251 218 250 290 M350 120 Q320 211 250 290 M210 190 Q232 252 250 290 M290 190 Q270 252 250 290"/>
+          <path class="bouquet-leaf" d="M206 210 Q171 183 158 201 Q181 228 211 220Z M293 211 Q330 183 344 203 Q319 231 289 221Z M230 253 Q195 232 183 246 Q209 265 233 262Z M269 252 Q303 233 318 248 Q292 268 266 262Z"/>
+        </svg>
+        <span class="bouquet-bow" aria-hidden="true"><i></i></span>
       </div>
+      <span class="sr-only" id="flowerAnnouncement" aria-live="polite"></span>
+      <p class="sub reveal delay4">Puede que no las puedas tener en un florero, pero las puedes conservar aquí para siempre. Te amo, mi pequeñita. &lt;3</p>
     </div>
-    <label class="next" for="p6">12 razones →</label>
+    <label class="next" for="p6">Seguir →</label>
   </section>
 
   <section class="scene s6">
-    <img class="sticker medium left-bottom" src="assets/stickers/gato-ilustrado-flores.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/mapache-girasoles.png" alt="">
-    <div class="wrap">
-      <div class="eyebrow reveal">12 razones</div>
-      <h2 class="reveal delay2">Por las que te elegiría otra vez.</h2>
-      <div class="reasons" id="reasons"></div>
+    <img class="collage-photo collage-rizos" src="assets/collage/retrato-rizos.png" alt="">
+    <img class="collage-photo collage-selfie" src="assets/collage/selfie-primer-plano.png" alt="">
+    <img class="collage-photo collage-concierto" src="assets/collage/foto-concierto.jpeg" alt="">
+    <img class="collage-photo collage-telefonos" src="assets/collage/telefonos-concierto.png" alt="">
+    <img class="collage-photo collage-formal" src="assets/collage/retrato-formal.png" alt="">
+    <div class="wrap collage-copy">
+      <h2 class="reveal delay2">Así me siento por no haberte podido dar tus flores hoy 😞</h2>
+      <p class="sub reveal delay3">Pero no quería que mi pequeñita princesa se quedara sin sus flores amarillas, así que te preparé esta sorpresa con muchísimo cariño.</p>
     </div>
-    <label class="next" for="p7">Seguir →</label>
+    <label class="next" for="p7">Última sorpresa →</label>
   </section>
 
   <section class="scene s7">
-    <img class="sticker big left-bottom" src="assets/stickers/gatito-vaquero-rosas.png" alt="">
-    <div class="wrap">
-      <div class="eyebrow reveal">Y seguimos contando</div>
-      <div class="big3 reveal delay2">3</div>
-      <h2 class="reveal delay3">años de nosotros 💛</h2>
-      <p class="sub reveal delay4">Y todavía quiero seguir coleccionando días, planes, risas y recuerdos contigo.</p>
-    </div>
-    <label class="next" for="p8">Tengo más para ti →</label>
-  </section>
-
-  <section class="scene s8">
-    <img class="sticker big right-bottom" src="assets/stickers/gatito-ramo-hola-grande.png" alt="">
-    <div class="wrap">
-      <div class="eyebrow reveal">Antes del final</div>
-      <h2 class="reveal delay2">Te escondí unas cosas.</h2>
-      <p class="sub reveal delay3">Toca las flores.</p>
-      <div class="secret-row reveal delay4" id="secretFlowers"></div>
-      <div class="secretText" id="secretText">🌻</div>
-    </div>
-    <label class="next" for="p9">Última sorpresa →</label>
-  </section>
-
-  <section class="scene s9">
     <img class="sticker big left-bottom" src="assets/stickers/perrito-flor-amarilla.png" alt=""><img class="sticker medium right-bottom" src="assets/stickers/gatito-flor-amarilla.png" alt="">
+    <img class="sticker medium right-top" src="assets/stickers/gatito-ramo-hola-grande.png" alt="">
     <div class="wrap">
       <div id="rain"></div>
       <div class="eyebrow reveal">Feliz 21 de septiembre</div>
@@ -342,14 +304,6 @@ p{line-height:1.65}
 
 <script>
 (function(){
-  const reasons=[
-    "Haces especiales los días normales.","Tu risa me cambia el ánimo.","Contigo puedo ser yo.","Amo nuestros recuerdos.",
-    "Incluso al discutir, sigo eligiéndonos.","Me gusta imaginar planes contigo.","Me haces sentir acompañado.","Cada etapa contigo me ha enseñado algo.",
-    "Me haces cuidar más los detalles.","Todavía quiero sorprenderte.","Eres parte de mis mejores recuerdos.","Volvería a acercarme a ti."
-  ];
-  const reasonsEl=document.getElementById('reasons');
-  reasons.forEach(function(r){const d=document.createElement('div');d.className='reason';d.textContent=r;reasonsEl.appendChild(d);});
-
   const bouquet=document.getElementById('bouquet');
   const flowerAnnouncement=document.getElementById('flowerAnnouncement');
   const flowerMessages=[
@@ -391,13 +345,6 @@ p{line-height:1.65}
       flowerAnnouncement.textContent=flowerMessages[i];
     });
     blossom.appendChild(flower);bouquet.appendChild(blossom);flowerButtons.push(flower);
-  });
-
-  const secrets=["Me sigues gustando muchísimo.","Gracias por estos tres años.","Quiero seguir viviendo primeras veces contigo.","Perdón si hoy esperabas algo diferente.","No olvidé el día. Pensé en ti.","Te sigo debiendo un ramo de verdad.","Mi intención con esto era verte sonreír.","Te amo, Patricia."];
-  const sf=document.getElementById('secretFlowers'), st=document.getElementById('secretText');
-  secrets.forEach(function(s,i){
-    const b=document.createElement('button');b.className='secret';b.type='button';b.textContent=i%2?'🌼':'🌻';
-    b.addEventListener('click',function(){st.textContent=s;});sf.appendChild(b);
   });
 
   const rain=document.getElementById('rain');
